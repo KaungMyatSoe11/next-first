@@ -1,6 +1,5 @@
-import localFont from "next/font/local";
 import "./globals.css";
-import Link from "next/link";
+import Header from "./_components/Header";
 
 export const metadata = {
   title: "Create Next App",
@@ -11,16 +10,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <header>Header</header>
-        <div className="flex gap-2">
-          <Link href={"/about"} >About</Link>
-          <Link href={"/contact"} >Contact</Link>
-          <Link href={"/post"} >Post</Link>
-          <Link href={"/post/region"} >Post by Region</Link>
-          <Link href={"/post/region/myanmar"} >Post by Region myanmar</Link>
-        </div>
+        <Header />
         {children}
-        <footer>footer</footer>
+        <footer className="text-center text-slate-400">
+          &copy; {new Date().getFullYear()} KMS{" "}
+        </footer>
       </body>
     </html>
   );
