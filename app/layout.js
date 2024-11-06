@@ -1,5 +1,6 @@
 import "./globals.css";
 import Header from "./_components/Header";
+import Provider from "./provider";
 
 export const metadata = {
   title: "Create Next App",
@@ -10,11 +11,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Header />
-        {children}
-        <footer className="text-center text-slate-400">
-          &copy; {new Date().getFullYear()} KMS{" "}
-        </footer>
+        <Provider>
+          <Header />
+          {children}
+          <footer className="text-center text-slate-400">
+            &copy; {new Date().getFullYear()} KMS{" "}
+          </footer>
+        </Provider>
       </body>
     </html>
   );
