@@ -1,17 +1,12 @@
-"use client";
-import { CartContext } from "@/context/CartProvider";
-import React, { useContext } from "react";
+import React from "react";
+import CartList from "./_components/cart-list";
+import CheckOutPanel from "./_components/check-out-panel";
 
 const ShoppingCartPage = () => {
-  const { carts } = useContext(CartContext);
   return (
-    <div>
-      <h1>ShoppingCartPage</h1>
-      {carts.map((product) => (
-        <li key={product.id}>
-          {product.title} / {product.quantity}
-        </li>
-      ))}
+    <div className="grid grid-cols-3">
+      <CartList />
+      <CheckOutPanel />
     </div>
   );
 };

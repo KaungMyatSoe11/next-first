@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
       <body>
         <Provider>
           <Header />
-          {children}
+          <div className="container mx-auto h-[90vh]">{children}</div>
           <footer className="text-center text-slate-400">
             &copy; {new Date().getFullYear()} KMS{" "}
           </footer>
