@@ -12,13 +12,16 @@ const CartProvider = ({ children }) => {
   useEffect(() => {
     if (carts.length > 0) {
       const total = carts.reduce(
-        (prev, current) => prev.totalPrice + current.totalPrice,
+        (prev, current) => prev + current.totalPrice,
         0
       );
       setTotalPrice(Number(total + shippingFee).toFixed(2));
       setSubTotalPrice(Number(total).toFixed(2));
+    } else {
+      setTotalPrice(Number(shippingFee).toFixed(2));
+      setSubTotalPrice("0.00");
     }
-  }, [carts]);
+  }, [carts, shippingFee]);
 
   const addToCart = (product) => {
     const checkProduct = carts.find((pt) => pt.id == product.id);
