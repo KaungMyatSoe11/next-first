@@ -1,6 +1,7 @@
 import "./globals.css";
 import Header from "./_components/Header";
 import Provider from "./provider";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata = {
   title: "Create Next App",
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
           <footer className="text-center text-slate-400">
             &copy; {new Date().getFullYear()} KMS{" "}
           </footer>
+          <Toaster />
         </Provider>
       </body>
     </html>

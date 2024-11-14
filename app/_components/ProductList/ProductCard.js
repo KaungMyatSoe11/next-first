@@ -1,18 +1,29 @@
 "use client";
 import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { CartContext } from "@/context/CartProvider";
+import { FavContext } from "@/context/FavProvider";
 
 const ProductCard = ({ product }) => {
+  const [isFav, setIsFav] = useState(false);
   const { addToCart } = useContext(CartContext);
-// cosnt {sdfs}=product
+  const { addFavProduct, favProducts } = useContext(FavContext);
+  // cosnt {sdfs}=product
   const handleClick = () => {
     addToCart(product);
   };
 
+  const handleFav = () => {
+    addFavProduct(product);
+  };
+  useEffect(() => {
+    const isExist = favProducts.find((pt) => pt.id == product.id);
+    isExist && setIsFav(true);
+  }, []);
+// isFav ? ... : ...;
   return (
     <Card className="overflow-hidden hover:scale-105 transition-all">
       {/* <Image
