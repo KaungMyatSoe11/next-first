@@ -4,7 +4,7 @@ import CheckOutPanel from "./_components/check-out-panel";
 
 const ShoppingCartPage = () => {
   return (
-    <div className="grid grid-cols-3">
+    <div className="grid grid-cols-3 space-x-10">
       <CartList />
       <CheckOutPanel />
     </div>

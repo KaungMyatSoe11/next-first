@@ -13,7 +13,7 @@ const CartList = () => {
 
   return (
     <div className="col-span-2">
-      <h2 className="text-lg my-10 font-bold">Shopping Cart.</h2>
+      <h2 className="text-2xl my-10 font-bold">Shopping Cart.</h2>
       {carts.length <= 0 ? (
         <Link href="/">
           <Button>Go To Shopping</Button>
@@ -25,25 +25,27 @@ const CartList = () => {
             <span className="col-span-2">Quantity</span>
             <span>Total Price</span>
           </div>
-          <div className="border-b ">
+          <div className="border-b my-4">
             {carts.map((item) => (
               <CartItem key={item.id} product={item} />
             ))}
           </div>
-          {/* <div className="text-end">
-            <div>
-              <span className="font-bold text-lg">Sub Total :</span>
-              <span className="font-bold">${subTotalPrice}</span>
-            </div>
-            <div>
-              <span className="font-bold text-lg">Shipping Fee :</span>
-              <span className="font-bold">${shippingFee}</span>
-            </div>
-            <div>
-              <span className="font-bold text-lg">Total :</span>
-              <span className="font-bold">${totalPrice}</span>
-            </div>
-          </div> */}
+          <table className="text-end w-fit ms-auto">
+            <tbody>
+              <tr>
+                <td className="text-left pr-12  py-2">Sub Total</td>
+                <td className="text-left py-2">${subTotalPrice}</td>
+              </tr>
+              <tr className="border-b">
+                <td className="text-left pr-12 py-2">Shipping Fee</td>
+                <td className="text-left py-2">${shippingFee}</td>
+              </tr>
+              <tr>
+                <td className="text-left pr-12 py-2 font-bold">Total</td>
+                <td className="text-left py-2 font-bold">${totalPrice}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       )}
     </div>

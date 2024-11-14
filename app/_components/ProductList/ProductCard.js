@@ -8,7 +8,7 @@ import { CartContext } from "@/context/CartProvider";
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useContext(CartContext);
-
+// cosnt {sdfs}=product
   const handleClick = () => {
     addToCart(product);
   };
